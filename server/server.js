@@ -1,20 +1,22 @@
 var express = require('express');
 var app = express();
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var api = require('./routes/index');
- 
+
 //conncet to mongodb server
 var db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', function(){
   console.log('connected mongodb server!');
 });
- 
 mongoose.connect('mongodb://localhost/test');
  
-const port = 4000;
+// server configure
+const port = 3001;
  
+app.use(cors())
 //bodyParser setting
 app.use(bodyParser.urlencoded({
   extended: true
