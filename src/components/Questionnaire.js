@@ -23,13 +23,13 @@ class Questionnaire extends Component {
         if(choice == this.state.dataSet[this.state.current].correct) {
             this.setState({correct:this.state.correct + 1})
         } else {
-            this.setState({correct:this.state.incorrect + 1})
+            this.setState({incorrect:this.state.incorrect + 1})
         }
 
         if(this.state.current == this.state.dataSet.length - 1) {
             this.setState({isFinished:true})
         } else {
-            this.setState({isFinished:this.state.current + 1})
+            this.setState({current:this.state.current + 1})
         }
     }
     render() {
