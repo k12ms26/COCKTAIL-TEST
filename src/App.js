@@ -4,6 +4,7 @@ import './App.css';
 export default class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       message: null,
       question: null,
@@ -14,7 +15,9 @@ export default class App extends Component {
       questionarray: [],
       count: 0
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+
   
   componentDidMount() {
     fetch('http://localhost:3001/api/index')
