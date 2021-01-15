@@ -1,26 +1,52 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
+import "./styles.css";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       message: null,
       question: null,
       currentQuestion: 0,
       showScore: false,
       score: 0,
-      index: 0
+      index: 0,
+      posts: [
+        {_id:null, options:Array, date_created:null}
+      ]
     };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+
   
   componentDidMount() {
     fetch('http://localhost:3001/api/index')
         .then(res=>res.json())
         .then(data=>this.setState({message:data.message}));
-    fetch('http://localhost:3001/api/')
+    fetch('http://localhost:3001/api/question')
         .then(res=>res.json())
-        .then(data=>this.setState({questions:data.results}))
-        .then(data=>this.setState({counts:data.count}));
+        .then(data=>this.setState({posts:data.results}));
+        //.then(data=>this.setState({question:data.results.options.description}))
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  getBlogPost = () => {
+    axios.get('http://localhost:3001/api/question')
+      .then((response)=>{
+        const data = response.data;
+        this.setState({posts:data});
+      })
   }
 
   render(){
@@ -75,6 +101,7 @@ export default class App extends Component {
         this.setState({showScore:this.state.showScore+1});
       }
     };
+    const { id, options, date_created} = this.state.posts;
     return (
       <div className='app'>
         {this.state.showScore ? (
@@ -83,10 +110,10 @@ export default class App extends Component {
           </div>
         ) : (
           <>
-            <hi>{this.state.message ? `${this.state.message}`:'helloworld'}</hi>
+            <p>{this.state.message}</p>
             <div className='question-section'>
               <div className='question-count'>
-                <span>Question {this.state.currentQuestion + 1}</span>/{questions.length}
+                <span>{this.state.question} {id} {this.state.currentQuestion + 1}</span>/{questions.length}
               </div>
               <div className='question-text'>{questions[this.state.currentQuestion].questionText}</div>
             </div>
