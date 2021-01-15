@@ -15,7 +15,6 @@ export default class App extends Component {
       questionarray: [],
       count: 0
     };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   

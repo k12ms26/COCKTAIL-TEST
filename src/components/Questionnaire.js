@@ -4,7 +4,6 @@ import QuizArea from './QuizArea';
 import ScoreArea from './ScoreArea';
 
 class Questionnaire extends Component {
-
     constructor() {
         super();
         this.state = {
