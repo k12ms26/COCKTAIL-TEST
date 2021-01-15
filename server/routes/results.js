@@ -17,10 +17,33 @@ router.get('/', function(req, res) {
 });
 
 // get single result by _id
-router.get('id/:id', function(req, res) {
+router.get('/id/:id', function(req, res) {
     Result.findOne({_id: req.params._id}, function(err, result) {
         if(err) return res.status(500).json({error: err});
         if(!result) return res.status(404).json({error: 'Result not found'});
+        res.json(result);
+    })
+});
+
+// get single result by parmeter
+router.get('/search', function(req, res) {
+    if (req.query.ei > 0) var ei = 1
+    else ei = 0
+    if (req.query.ns > 0) var ns = 1
+    else ns = 0
+    if (req.query.tf > 0) var tf = 1
+    else tf = 0
+    if (req.query.pj > 0) var pj = 1
+    else pj = 0
+
+    Result.findOne({
+        ei_point: ei,
+        ns_point: ns,
+        tf_point: tf,
+        pj_point: pj
+    }, function(err, result) {
+        if(err) return res.status(500).json({error: err});
+        if(!result) return res.status(404).json({error: 'ddResult not found'});
         res.json(result);
     })
 });
@@ -56,7 +79,7 @@ router.put('/:index', function(req, res) {
         if(err) return res.status(500).json({error: err});
         result.result_type = req.body.result_type
         result.description = req.body.description
-        result.image = req.body.description
+        result.image = req.body.image
         result.save(function(err) {
             if(err){
                 console.error(err);

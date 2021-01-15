@@ -44,10 +44,14 @@ router.post('/', function(req, res) {
     .exec(function(err, questions) {
         if(err) return res.status(500).json({error: err});
         var question = new Question();
-        //question.index = questions[0].index + 1;
+        if(!questions) question.index = 1
+        else if (questions.length == 0) question.index = 1
+        else {
+            question.index = (questions[0].index + 1);
+        }
         question.content = req.body.content;
         question.options = req.body.options;
-
+        console.log(question)
         question.save(function(err) {
             if(err){
                 console.error(err);

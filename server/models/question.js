@@ -9,7 +9,6 @@ var questionSchema = new Schema({
     index: {type: Number, unique: true},
     content: String,
     options: [{
-        index: {type: Number, unique: true},
         description: String,
         ei_point: {type: Number, default: 0},
         ns_point: {type: Number, default: 0},
