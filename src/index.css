@@ -10,6 +10,13 @@ body {
   font-family: "Verdana", cursive, sans-serif;
   color: #ffffff;
 }
+* {
+  font-family: 'CookieRun Bold'; 
+  font-style: normal;
+  font-weight: 100;
+  src: url("./fonts/GmarketSansTTFBold.ttf"),
+  url("./fonts/GmarketSansTTFBold.ttf") format('truetype'); 
+}
 
 body {
   background-color: #7cc6fe;

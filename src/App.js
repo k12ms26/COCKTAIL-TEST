@@ -1,4 +1,5 @@
 import React, { Component, useState } from 'react';
+import './App.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -9,24 +10,37 @@ export default class App extends Component {
       currentQuestion: 0,
       showScore: false,
       score: 0,
-      index: 0
+      index: 0,
+      questionarray: [],
+      count: 0
     };
   }
   
   componentDidMount() {
     fetch('http://localhost:3001/api/index')
         .then(res=>res.json())
-        .then(data=>this.setState({message:data.message}));
-    fetch('http://localhost:3001/api/')
+        .then(res=> {
+          console.log(JSON.stringify(res));
+          this.setState({message:res.message});
+        });
+    fetch('http://localhost:3001/api/question')
         .then(res=>res.json())
-        .then(data=>this.setState({questions:data.results}))
-        .then(data=>this.setState({counts:data.count}));
+        .then(res => {
+          console.log(JSON.stringify(res));
+          this.setState({count:res.count});
+          this.setState({questionarray: res.results.map(item => ({
+            content: item.content,
+            options: item.options,
+            index: item.index
+          }))
+        });
+      })
   }
 
-  render(){
+  render() {
     const questions = [
       {
-        questionText: this.setState.questions,
+        questionText: "questioncomponent",
         answerOptions: [
           { answerText: 'New York', isCorrect: false },
           { answerText: 'London', isCorrect: false },
@@ -63,32 +77,38 @@ export default class App extends Component {
       },
     ];
   
-    const handleAnswerOptionClick = (isCorrect) => {
-      if (isCorrect) {
-        this.setState({score:this.state.score+1});
-      }
+    const handleAnswerOptionClick = (ei_point) => {
+      this.setState({score:this.state.score + ei_point});
   
       const nextQuestion = this.state.currentQuestion+1;
-      if (nextQuestion < questions.length) {
+      if (nextQuestion < this.state.count) {
         this.setState({currentQuestion:this.state.currentQuestion+1});
       } else {
         this.setState({showScore:this.state.showScore+1});
       }
     };
+
+    const questiontextcomponent = this.state.questionarray.map(item => {
+      if (item.index == this.state.currentQuestion+1) {
+        return <div className='question-text'>{item.content}</div>
+      } else {
+
+      }
+    })
+
     return (
       <div className='app'>
         {this.state.showScore ? (
           <div className='score-section'>
-            You scored {this.state.score} out of {questions.length}
+            You scored {this.state.score} out of {this.state.count}
           </div>
         ) : (
           <>
-            <hi>{this.state.message ? `${this.state.message}`:'helloworld'}</hi>
             <div className='question-section'>
               <div className='question-count'>
-                <span>Question {this.state.currentQuestion + 1}</span>/{questions.length}
+                <span>Question {this.state.currentQuestion + 1}</span>/{this.state.count}
               </div>
-              <div className='question-text'>{questions[this.state.currentQuestion].questionText}</div>
+              <div>{questiontextcomponent}</div>
             </div>
             <div className='answer-section'>
               {questions[this.state.currentQuestion].answerOptions.map((answerOption) => (
