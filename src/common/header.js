@@ -7,7 +7,7 @@ export default class Header extends React.Component {
   render() {
     return (
         <div>  
-            <ul className=".header">
+            <ul className="header">
                 <li><Link to="home">Home</Link></li>
                 <li><Link to="test">Test</Link></li>
             </ul>
