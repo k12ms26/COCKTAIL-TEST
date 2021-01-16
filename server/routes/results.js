@@ -74,8 +74,8 @@ router.post('/', function(req, res) {
 });
 
 // edit single result by _id
-router.put('/:index', function(req, res) {
-    Result.findOne({index: req.params.index}, function(err, result) {
+router.put('/id/:id', function(req, res) {
+    Result.findOne({_id: req.params.id}, function(err, result) {
         if(err) return res.status(500).json({error: err});
         result.result_type = req.body.result_type
         result.description = req.body.description
@@ -92,7 +92,7 @@ router.put('/:index', function(req, res) {
 });
 
 // delete single result by _id 
-router.delete('/:id', function(req, res, next){
+router.delete('/id/:id', function(req, res, next){
     Result.deleteOne({ _id: req.params.id }, function(err, output){
         if(err) {
             res.status(500).json({ error: err });
