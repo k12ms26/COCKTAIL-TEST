@@ -94,7 +94,15 @@ export default class App extends Component {
       if (item.index == this.state.currentQuestion+1) {
         return <div className='question-text'>{item.content}</div>
       } else {
+      }
+    })
 
+    const questionoptioncomponent = this.state.questionarray.map(item => {
+      if (item.index == this.state.currentQuestion+1) {
+        return item.options.map((option) => (
+          <button onClick={() => handleAnswerOptionClick(option.ei_point)}>{option.description}</button>
+        ))
+      } else {
       }
     })
 
@@ -113,9 +121,7 @@ export default class App extends Component {
               <div>{questiontextcomponent}</div>
             </div>
             <div className='answer-section'>
-              {questions[this.state.currentQuestion].answerOptions.map((answerOption) => (
-                <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-              ))}
+              {questionoptioncomponent}
             </div>
           </>
         )}
