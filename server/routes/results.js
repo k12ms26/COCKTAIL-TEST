@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 // get single result by _id
 router.get('/id/:id', function(req, res) {
-    Result.findOne({_id: req.params._id}, function(err, result) {
+    Result.findOne({_id: req.params.id}, function(err, result) {
         if(err) return res.status(500).json({error: err});
         if(!result) return res.status(404).json({error: 'Result not found'});
         res.json(result);

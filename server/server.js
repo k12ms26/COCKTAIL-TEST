@@ -15,15 +15,17 @@ mongoose.connect('mongodb://localhost/test');
  
 // server configure
 const port = 3001;
- 
+
 app.use(cors())
 //bodyParser setting
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
 app.use('/api', api);
- 
+app.use('/uploads', express.static(__dirname+'/uploads'));
+
 app.listen(port, () => {
   console.log('Express is listening on port', port);
 });

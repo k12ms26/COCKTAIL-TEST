@@ -1,21 +1,18 @@
 import React from 'react';
 import './App.css';
-import { Link } from '@version/react-router-v3'
+import Header from './common/header.js'
+import Footer from './common/footer.js'
 
 export default class App extends React.Component {
 
   render() {
     return (
       <div>
-        <div>  
-          <ul className="Link">
-            <li><Link to="home">Home</Link></li>
-            <li><Link to="test">Test</Link></li>
-          </ul>
-        </div>
+        <Header />
         <div>
           {this.props.children}
         </div>
+        <Footer />
       </div>
     );
   }
