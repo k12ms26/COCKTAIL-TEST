@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <div>
         <div>  
-          <ul>
+          <ul className="Link">
             <li><Link to="home">Home</Link></li>
             <li><Link to="test">Test</Link></li>
           </ul>

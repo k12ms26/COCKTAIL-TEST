@@ -27,6 +27,7 @@ export default class Result extends React.Component {
             <div className='app'>
                 <div className='score-section'>
                     <>
+                        당신의 유형은
                         Your score:
                         <br></br>
                         E/I: {this.state.total_ei}
