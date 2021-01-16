@@ -25,7 +25,8 @@ body {
 }
 .footer {
   font-size : 60%;
-  text-align: center;
+  text-align: center
+  ;
 }
 .app {
   justify-content: center;
@@ -41,10 +42,16 @@ body {
   max-width: 1600;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
+.Result {
+  text-align: center;
+}
 
 .image {
-  max-width: 100%;
+  width:100%;
+  min-width: 100px;
   height:auto;
+  margin: auto;
+  display: block;
 }
 .score-section {
   font-size: 80%;
