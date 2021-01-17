@@ -53,7 +53,7 @@ router.post('/', function(req, res) {
     var result = new Result();
     result.result_type = req.body.result_type
     result.description = req.body.description
-    result.image = req.body.description
+    result.image = req.body.image
     result.ei_point = req.body.ei_point
     result.ns_point = req.body.ns_point
     result.tf_point = req.body.tf_point

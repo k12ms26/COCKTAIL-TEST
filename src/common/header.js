@@ -6,12 +6,15 @@ export default class Header extends React.Component {
 
   render() {
     return (
-        <div>  
-            <ul className="header">
-                <li><Link to="home">Home</Link></li>
-                <li><Link to="test">Test</Link></li>
-            </ul>
-        </div>
+      <div className="container">
+        <header>
+          <h2>Cocktail Test</h2>
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/test">Test</a></li>
+          </ul>
+        </header>
+      </div>
     );
   }
 }

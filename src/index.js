@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Router, Route, IndexRoute, browserHistory } from '@version/react-router-v3';
 
 import './index.css';

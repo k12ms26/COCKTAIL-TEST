@@ -37,9 +37,7 @@ export default class Result extends React.Component {
                     <br></br>
                 </div>
                 <div><img className="image" src = {this.state.result.image} /></div>
-                <br></br>
-                <div className='score-section'>{this.state.result.description}</div>
-
+                <div>{this.state.result.description}</div>
             </div>
         );
     }
