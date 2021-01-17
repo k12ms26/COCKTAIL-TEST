@@ -81,7 +81,7 @@ export default class Test extends React.Component {
                                 pathname: "/result",
                                 search: "?ei=" +this.state.total_ei+ "&ns=" +this.state.total_ns+ "&tf=" +this.state.total_tf + "&pj=" +this.state.total_pj,
                             }}>
-                            <button>Get Result</button>
+                            <button>결과 확인</button>
                         </Link>
                     </>
                 </div>
