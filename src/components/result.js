@@ -32,12 +32,15 @@ export default class Result extends React.Component {
         return (
             <div className='app'>
                 <div className="Result">
-                    당신의 유형은
+                    당신의 유형은...
                     <br></br>
                     <br></br>
-                    {this.state.result.result_type}
                 </div>
                 <div><img className="image" src = {this.state.result.image} /></div>
+                <br></br>
+                <div className="resulttype">{this.state.result.result_type}</div>
+                <br></br>
+                <br></br>
                 <div>{this.state.result.description}</div>
             </div>
         );
