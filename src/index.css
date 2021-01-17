@@ -7,13 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  font-family: "Verdana", cursive, sans-serif;
-  color: #ffffff;
-}
-* {
+  color: white;
   font-family: 'CookieRun Bold'; 
-  font-style: normal;
-  font-weight: 100;
   src: url("./fonts/GmarketSansTTFBold.ttf"),
   url("./fonts/GmarketSansTTFBold.ttf") format('truetype'); 
 }
@@ -23,11 +18,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-.footer {
-  font-size : 60%;
-  text-align: center
-  ;
+
+.container {
+  width:100%;
+	margin:0 auto;
 }
+
 .app {
   justify-content: center;
   margin:auto;
@@ -42,6 +38,7 @@ body {
   max-width: 1600;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
+
 .Result {
   text-align: center;
 }
@@ -104,11 +101,9 @@ button {
   border: 5px solid #234668;
   cursor: pointer;
 }
-
 .correct {
   background-color: #2f922f;
 }
-
 .incorrect {
   background-color: #ff3333;
 }
@@ -123,4 +118,49 @@ button:focus {
 
 button svg {
   margin-right: 5px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+header {
+  width: 100%;
+  height: 75px;
+  background: teal;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+	justify-content: space-between;
+}
+
+header > h2 {
+	margin-left:20px;
+}
+
+header ul {
+	width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+header ul > li {
+	font-size:20px;
+  height: 100%;
+  margin: 10px;
+	display: flex;
+	align-items: center;
+}
+
+footer {
+  font-size : 60%;
+  text-align: center;
 }
