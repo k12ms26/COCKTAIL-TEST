@@ -18,4 +18,6 @@ var resultSchema = new Schema({
     image: String
 });
 
+require('../images/cocktailtmp.png')
+
 module.exports = mongoose.model('result', resultSchema);
