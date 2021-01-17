@@ -68,23 +68,13 @@ export default class Test extends React.Component {
             <div className='app'>
                 {this.state.showScore ? (
                 <div className='score-section'>
-                    <>
-                        Your score: 
-                        <br></br>
-                        E/I: {this.state.total_ei}
-                        <br></br>
-                        N/S: {this.state.total_ns}
-                        <br></br>
-                        T/F: {this.state.total_tf}
-                        <br></br>
-                        P/J: {this.state.total_pj}
-                        <Link to={{
-                                pathname: "/result",
-                                search: "?ei=" +this.state.total_ei+ "&ns=" +this.state.total_ns+ "&tf=" +this.state.total_tf + "&pj=" +this.state.total_pj,
-                            }} className='link'>
-                            <button>결과 확인</button>
-                        </Link>
-                    </>
+                    <p>모든 질문에 답변하셨습니다.</p>
+                    <Link to={{
+                            pathname: "/result",
+                            search: "?ei=" +this.state.total_ei+ "&ns=" +this.state.total_ns+ "&tf=" +this.state.total_tf + "&pj=" +this.state.total_pj,
+                        }} className='link'>
+                        <button>결과 확인</button>
+                    </Link>
                 </div>
                 ) : (
                 <>

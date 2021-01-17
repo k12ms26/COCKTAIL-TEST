@@ -7,6 +7,7 @@ import App from './App';
 import Test from './components/test'
 import Result from './components/result'
 import Home from './components/home'
+import NotFound from './components/notFound'
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -15,6 +16,7 @@ ReactDOM.render(
         <Route path = "home" component = {Home} />
         <Route path = "test" component = {Test} />
         <Route path = "result" component = {Result} />
+        <Route path = "*" component = {NotFound} />
       </Route>
   </Router>
 

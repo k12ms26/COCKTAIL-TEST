@@ -77,9 +77,9 @@ router.post('/', function(req, res) {
 router.put('/id/:id', function(req, res) {
     Result.findOne({_id: req.params.id}, function(err, result) {
         if(err) return res.status(500).json({error: err});
-        result.result_type = req.body.result_type
-        result.description = req.body.description
-        result.image = req.body.image
+        if (req.body.result_type) result.result_type = req.body.result_type
+        if (req.body.description) result.description = req.body.description
+        if (req.body.image) result.image = req.body.image
         result.save(function(err) {
             if(err){
                 console.error(err);
