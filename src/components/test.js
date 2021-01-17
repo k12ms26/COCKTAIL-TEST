@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+import { Collapse, Zoom, Fade, Slide, Grow } from '@material-ui/core';
+
 export default class Test extends React.Component {
 
     constructor(props) {
@@ -45,6 +47,7 @@ export default class Test extends React.Component {
             if (next < this.state.count) {
                 this.setState({current:next});
             } else {
+                this.setState({current:next});
                 this.setState({showScore:this.state.showScore+1});
             }
         };
@@ -64,6 +67,7 @@ export default class Test extends React.Component {
         })
     
         return (
+            <Slide in={true} key={this.state.current} timeout={1000} direction="left" mountOnEnter unmountOnExit>
             <div className='app'>
                 {this.state.showScore ? (
                 <div className='score-section'>
@@ -90,6 +94,7 @@ export default class Test extends React.Component {
                 </>
                 )}
             </div>
+            </Slide>
         );
     }
 }

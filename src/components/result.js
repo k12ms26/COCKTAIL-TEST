@@ -2,6 +2,8 @@ import React from 'react';
 import queryString from 'query-string';
 import '../index.css';
 
+import { Collapse, Zoom, Fade, Slide, Grow } from '@material-ui/core';
+
 export default class Result extends React.Component {
 
     constructor(props) {
@@ -31,16 +33,22 @@ export default class Result extends React.Component {
     render() {
         return (
             <div className='app'>
+                <Fade in={true} timeout={1000}>
                 <div className="Result">
                     당신의 유형은...
                     <br></br>
                 </div>
-                <div><img className="image" src = {this.state.result.image} /></div>
+                </Fade>
+                <Zoom in={true} timeout={3000} >
+                <div>
+                <div><img className="image" src = {this.state.result.image}/></div>
                 <br></br>
                 <div className="resulttype">{this.state.result.result_type}</div>
                 <br></br>
                 <br></br>
                 <div className="description">{this.state.result.description}</div>
+                </div>
+                </Zoom>
             </div>
         );
     }

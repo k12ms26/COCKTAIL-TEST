@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import '../index.css'
 
+import { Collapse, Zoom, Fade, Slide, Grow } from '@material-ui/core';
+
 export default class Home extends React.Component {
     render() {
         return (
+            <Grow in={true} timeout={3000} mountOnEnter unmountOnExit>
+            <div>
+            <Slide in={true} timeout={1500} direction="up" >
             <div className='app'>
                 <h3>당신에게 어울리는<br></br>칵테일을 알아보세요</h3>
                 <p className="des1"><br></br>술과 술자리에 관한 몇 개의 질문에 대답해주세요.<br></br>답변을 토대로 당신의 성향 (지향하는 관계, 인식, 판단, 생활방식 등) 을 진단하고<br></br>어울리는 칵테일을 알려 드립니다.</p>
@@ -15,6 +20,9 @@ export default class Home extends React.Component {
                 </Link>
                 <br></br>
             </div>
+            </Slide>
+            </div>
+            </Grow>
         );
     }
 }
