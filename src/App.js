@@ -1,34 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Questionnaire from './components/Questionnaire';
-import { render } from 'react-dom';
-import { Component } from 'react';
+import Header from './common/header.js'
+import Footer from './common/footer.js'
 
-class App extends Component {
+export default class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: null
-    };
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3001/api/index')
-        .then(res=>res.json())
-        .then(data=>this.setState({message:data.message}));
-  }
-  
-  render(){
-    const {message} = this.state;
+  render() {
     return (
-      <div className="App">
-        <hi>{message ? `${message}`:'helloworld'}</hi>
-        <h1>JavaScript Quiz</h1>
-        <Questionnaire />
+      <div>
+        <Header />
+        <div>
+          {this.props.children}
+        </div>
+        <Footer />
       </div>
     );
   }
 }
-
-export default App;

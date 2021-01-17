@@ -1,18 +1,21 @@
+/*
+ * question.js: 
+ * Schema for a question, its option and corresponding paramerter points (e/i, n/s, t/f, p/j)
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var questionSchema = new Schema({
-    index: Number,
-    question: String,
-    option: [{
-        index: Number,
+    index: {type: Number, unique: true},
+    content: String,
+    options: [{
         description: String,
-        ei_point: Number,
-        ns_point: Number,
-        tf_point: Number,
-        pj_point: Number
+        ei_point: {type: Number, default: 0},
+        ns_point: {type: Number, default: 0},
+        tf_point: {type: Number, default: 0},
+        pj_point: {type: Number, default: 0}
     }],
-    date_created: { type: Date, default: Date.now  }
+    date_created: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('question', questionSchema);

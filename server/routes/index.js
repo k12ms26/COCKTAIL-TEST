@@ -1,14 +1,16 @@
 var express = require('express');
-var Questions = require('./questions');
 const router = express.Router();
 
-router.use('/question', Questions);
+var Questions = require('./questions');
+var Results = require('./results')
 
-router.use('/index', function(req, res) {
+router.use('/question', Questions);
+router.use('/result', Results)
+
+router.use('/index', function(req, res, next) {
     res.json({
         message: 'hello world!'
     });
-    
 });
 
 module.exports =  router;
