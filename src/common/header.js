@@ -8,11 +8,7 @@ export default class Header extends React.Component {
     return (
       <div className="container">
         <header>
-          <h2>Cocktail Test</h2>
-          <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/test">Test</a></li>
-          </ul>
+          <h2><Link to="home" className='link'>Cocktail Test</Link></h2>
         </header>
       </div>
     );
