@@ -1,6 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { Switch, Route } from 'react-router-dom';
 
 import './index.css';
 import Header from './common/header.js'
@@ -16,16 +15,12 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <TransitionGroup>
-          <CSSTransition timeout={300} classNames="fade">
-            <Switch>
-              <Route exact path = "/" component = {Home} />
-              <Route path = "/test" component = {Test} />
-              <Route path = "/result" component = {Result} />
-              <Route path = "/*" component = {NotFound} />
-            </Switch>
-          </CSSTransition>
-        </TransitionGroup>
+        <Switch>
+          <Route exact path = "/" component = {Home} />
+          <Route path = "/test" component = {Test} />
+          <Route path = "/result" component = {Result} />
+          <Route path = "/*" component = {NotFound} />
+        </Switch>
         <Footer />
       </div>
     );

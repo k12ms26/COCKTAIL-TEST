@@ -246,15 +246,3 @@ footer {
 button:hover {
   background-color: #411634;
 }
-
-/* animation */
-.fade-appear {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.fade-appear-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms, transform 300ms;
-}
