@@ -2,15 +2,23 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, hoonmakdae, "rounder";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family:hoonmakdae;
+  src:url("./fonts/HoonMakdae.ttf") format("truetype");
+}
+@font-face {
+  font-family: rounder;
+  src:url("./fonts/GmarketSansTTFBold.ttf") format("truetype");
+}
+
 * {
-  color: white;
-  font-family: 'CookieRun Bold'; 
-  src: url("./fonts/GmarketSansTTFBold.ttf"),
-  url("./fonts/GmarketSansTTFBold.ttf") format('truetype'); 
+  font-weight: 100;
+  color: #ffffff;
 }
 
 body {
@@ -22,12 +30,11 @@ body {
 .container {
   width:100%;
 	margin:0 auto;
-}
 
 .app {
   justify-content: center;
   margin:auto;
-  background-color: #252d4a;
+  background-color: #181717;
   margin-top: 10%;
   margin-bottom: 5%;
   width: 80%;
@@ -36,7 +43,6 @@ body {
   border-radius: 15px;
   padding: 15px;
   max-width: 1600;
-  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
 }
 
 .Result {
@@ -44,9 +50,8 @@ body {
 }
 
 .image {
-  width:100%;
-  min-width: 100px;
-  height:auto;
+  width: 100px;
+  height: 100%;
   margin: auto;
   display: block;
 }
@@ -57,16 +62,21 @@ body {
 
 /* QUESTION/TIMER/LEFT SECTION */
 .question-section {
+
   width: 100%;
   position: relative;
 }
 
 .question-count {
-  font-size: 80%;
+
+  font-size: 90%;
   margin-bottom: 20px;
 }
 
 .question-text {
+  font-weight: bold;
+  font-size: 110%;
+  text-align: center;
   margin-bottom: 12px;
 }
 
@@ -82,24 +92,34 @@ body {
 
 /* ANSWERS/RIGHT SECTION */
 .answer-section {
+  text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.cocktailimage {
+  width:8%;
+  height: 8%;
+}
+
 button {
+  text-align: center;
   width: 100%;
-  font-size: 75%;
-  color: #ffffff;
-  background-color: #252d4a;
+  height: 200%;
+  font-size: 80%;
+  color: #dedede;
+  font-weight: bold;
+  background-color: #181717;
   border-radius: 15px;
-  display: flex;
-  padding: 5px;
+  padding: 12px;
   justify-content: flex-start;
   align-items: center;
-  border: 5px solid #234668;
+  border: solid #726458;
   cursor: pointer;
+  margin-top: 5%;
+
 }
 .correct {
   background-color: #2f922f;
@@ -161,6 +181,8 @@ header ul > li {
 }
 
 footer {
-  font-size : 60%;
+  font-family: rounder;
+  font-weight: lighter;
+  font-size : 45%;
   text-align: center;
 }

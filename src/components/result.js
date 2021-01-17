@@ -1,5 +1,6 @@
 import React from 'react';
 import queryString from 'query-string';
+import '../index.css';
 
 export default class Result extends React.Component {
 
@@ -32,6 +33,7 @@ export default class Result extends React.Component {
             <div className='app'>
                 <div className="Result">
                     당신의 유형은
+                    <br></br>
                     <br></br>
                 </div>
                 <div><img className="image" src = {this.state.result.image} /></div>
