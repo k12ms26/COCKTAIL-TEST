@@ -7,9 +7,14 @@ export default class Footer extends React.Component {
     return (
       <div>
         <footer>
+        <br></br>
+            <hr></hr>
+            <br></br>
+            <br></br> 
             @copyright 2021. MADCAMP
             <br></br>
-            cs496 - week3 by 김민선 최예원
+                    <br></br> 
+            cs496 - week3 by 김민선 & 최예원
         </footer>
       </div>
     );

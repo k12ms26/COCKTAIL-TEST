@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, hoonmakdae, "rounder";
+    sans-serif, "hoonmakdae", "rounder", "music";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,6 +13,26 @@ body {
 @font-face {
   font-family: rounder;
   src:url("./fonts/GmarketSansTTFBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: music;
+  src:url("./fonts/woman.ttf") format("truetype");
+}
+@font-face {
+  font-family : credit;
+  src:url("./fonts/HSBomBaram2.0.ttf") format("truetype");
+}
+@font-face {
+  font-family : question;
+  src:url("./fonts/Lilly__.ttf") format("truetype");
+}
+@font-face {
+  font-family : ques;
+  src:url("./fonts/DXShnm-KSCpc-EUC-H.ttf") format("truetype");
+}
+@font-face {
+  font-family : rest;
+  src:url("./fonts/SunBatang-Light.ttf") format("truetype");
 }
 * {
   font-weight: 100;
@@ -29,20 +49,30 @@ body {
 }
 
 .resulttype {
+  font-family: music;
   text-align: center;
+  font-size: x-large;
+}
+
+.description {
+  font-family: music;
+  text-align:justify;
+  margin-bottom: -5%;
+  margin-top: -1.5%;
 }
 
 h2 {
-  font-family: rounder;
-  font-weight: bolder;
+  font-family: credit;
+  font-size: xx-large;
+  font-weight:lighter;
   text-align: center;
-  line-height: 60%;
+  line-height: 140%;
 }
 
 p {
-  font-family: rounder;
+  font-family: music;
   text-align: center;
-  font-size: smaller;
+  line-height: 150%;
 }
 .app {
   justify-content: center;
@@ -55,14 +85,20 @@ p {
   height: 100%;
   border-radius: 15px;
   padding: 15px;
-  max-width: 1600;
+  max-width: 1028px;
 }
 .Result {
+  font-size: xx-large;
+  font-family: rounder;
+  font-weight: bolder;
   text-align: center;
+  margin-top: -5%;
 }
 .image {
-  width: 100px;
+
+  width: 100%;
   height: 100%;
+  max-width: 200px;
   margin: auto;
   display: block;
 }
@@ -72,12 +108,21 @@ p {
 }
 /* QUESTION/TIMER/LEFT SECTION */
 .question-section {
+  margin-top: -10%;
   width: 100%;
   position: relative;
 }
+
+.result_go {
+  font-size : larger;
+  margin-top: 25%;
+}
 .question-count {
-  font-size: 90%;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 5%;
+  font-family: question;
+  font-size: 75%;
+  line-height: 120%;
 }
 .question-text {
   font-weight: bold;
@@ -103,16 +148,19 @@ p {
   justify-content: space-between;
 }
 .cocktailimage {
+  max-width: 50px;
   width:8%;
   height: 8%;
 }
 button {
+  font-family: rest;
   text-align: center;
-  width: 100%;
+  align-self: center;
+  width: 95%;
   height: 200%;
-  font-size: 80%;
+  font-size: 90%;
   color: #DEDEDE;
-  font-weight: bold;
+  font-weight: 600;
   background-color: #181717;
   border-radius: 15px;
   padding: 12px;
@@ -122,15 +170,7 @@ button {
   cursor: pointer;
   margin-top: 5%;
 }
-.correct {
-  background-color: #2F922F;
-}
-.incorrect {
-  background-color: #FF3333;
-}
-button:hover {
-  background-color: #555E7D;
-}
+
 button:focus {
   outline: none;
 }
@@ -138,25 +178,41 @@ button svg {
   margin-right: 5px;
 }
 .link {
+  font-family: credit;
   text-decoration: none;
+  font-size: medium;
+  text-align: center;
+  align-self: center;
 }
 header {
   width: 100%;
-  font-size: 75%;
+  font-size: 50%;
+  min-height: 100%;
   height: 75px;
   background: #726458;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+hr {
+  width:100%;
+  border-top: 50% dotted #181717;
+  margin-top: 5%;
+}
 header > h2 {
   margin-left:20px;
 }
 footer {
-  font-family: rounder;
+  font-family: credit;
   font-weight: lighter;
-  font-size : 45%;
+  font-size : 70%;
   text-align: center;
+  margin-bottom: 10%;
+  line-height: 120%;
+
+}
+button:hover {
+  background-color: #555E7D;
 }
 
 /* animation */
@@ -167,4 +223,11 @@ footer {
 .homeTransition-appear.homeTransition-appear-active{
   opacity: 1;
   transition: all .5s ease-in-out;
+}
+
+.ques {
+  font-family: ques;
+  line-height: 200%;
+  font-size: small;
+  font-weight: lighter;
 }

@@ -73,18 +73,17 @@ export default class Test extends React.Component {
                             pathname: "/result",
                             search: "?ei=" +this.state.total_ei+ "&ns=" +this.state.total_ns+ "&tf=" +this.state.total_tf + "&pj=" +this.state.total_pj,
                         }} className='link'>
-                        <button>결과 확인</button>
+                        <button className="result_go">결과 확인</button>
                     </Link>
                 </div>
                 ) : (
                 <>
                     <div className='question-section'>
                     <div className='question-count'>
-                      <img className="cocktailimage" src={image}></img>
                         <span>  Question {this.state.current + 1}</span>/{this.state.count}
-
                     </div>
-                    <div>{questiontextcomponent}</div>
+                    <br></br>
+                    <div className="ques">{questiontextcomponent}</div>
                     </div>
                     <div className='answer-section'>
                     {questionoptioncomponent}
