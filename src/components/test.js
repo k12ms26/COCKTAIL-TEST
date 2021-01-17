@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from '@version/react-router-v3'
-import image from './bluecocktail.png'
 
 export default class Test extends React.Component {
 
@@ -68,7 +67,7 @@ export default class Test extends React.Component {
             <div className='app'>
                 {this.state.showScore ? (
                 <div className='score-section'>
-                    <p>모든 질문에 답변하셨습니다.</p>
+                    <p className="testEnd">모든 질문에 답변하셨습니다.</p>
                     <Link to={{
                             pathname: "/result",
                             search: "?ei=" +this.state.total_ei+ "&ns=" +this.state.total_ns+ "&tf=" +this.state.total_tf + "&pj=" +this.state.total_pj,
