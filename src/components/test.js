@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@version/react-router-v3'
+import { Link } from 'react-router-dom'
 import image from './bluecocktail.png'
 
 export default class Test extends React.Component {
