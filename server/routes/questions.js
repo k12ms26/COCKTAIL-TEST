@@ -72,7 +72,7 @@ router.put('/id/:id', function(req, res) {
     Question.findOne({_id: req.params.id}, function(err, question) {
         if(err) return res.status(500).json({error: err});
         question.content = req.body.content
-        question.option = req.body.option
+        question.options = req.body.options
         question.save(function(err) {
             if(err){
                 console.error(err);

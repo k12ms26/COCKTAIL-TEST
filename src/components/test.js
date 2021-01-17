@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@version/react-router-v3'
+import image from './bluecocktail.png'
 
 export default class Test extends React.Component {
 
@@ -89,7 +90,9 @@ export default class Test extends React.Component {
                 <>
                     <div className='question-section'>
                     <div className='question-count'>
-                        <span>Question {this.state.current + 1}</span>/{this.state.count}
+                      <img className="cocktailimage" src={image}></img>
+                        <span>  Question {this.state.current + 1}</span>/{this.state.count}
+
                     </div>
                     <div>{questiontextcomponent}</div>
                     </div>
