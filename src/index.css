@@ -106,7 +106,8 @@ p {
   font-family: rounder;
   font-weight: bolder;
   text-align: center;
-  margin-top: -5%;
+  margin-top: -8%;
+  margin-bottom: 2%;
 }
 .image {
   width: 100%;
@@ -114,6 +115,7 @@ p {
   max-width: 200px;
   margin: auto;
   display: block;
+  margin-bottom: 3%;
 }
 .score-section {
   font-size: 80%;
