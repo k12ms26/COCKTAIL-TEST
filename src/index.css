@@ -221,7 +221,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
 }
 hr {
   width:100%;
@@ -271,7 +271,7 @@ button:hover {
   margin-bottom: 2%;
   clear:both;
   float:left;
-  align-self: center;
+  margin-right: 3%;
 }
 .badimage {
   width : 15%;
@@ -280,6 +280,7 @@ button:hover {
   margin-bottom: 2%;
   clear:both;
   float:left;
+  margin-right: 3%;
 }
 
 .typehr {
