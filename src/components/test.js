@@ -22,7 +22,7 @@ export default class Test extends React.Component {
     }
     
     componentDidMount() {
-        fetch('http://localhost:3001/api/question')
+        fetch('http://192.249.18.54:3001/api/question')
             .then(res=>res.json())
             .then(res => {
                 console.log(JSON.stringify(res));
@@ -67,7 +67,7 @@ export default class Test extends React.Component {
         })
     
         return (
-            <Slide in={true} key={this.state.current} timeout={1000} direction="left" mountOnEnter unmountOnExit>
+
             <div className='app'>
                 {this.state.showScore ? (
                 <div className='score-section'>
@@ -82,19 +82,21 @@ export default class Test extends React.Component {
                 ) : (
                 <>
                     <div className='question-section'>
-                    <div className='question-count'>
-                        <span>  Question {this.state.current + 1}</span>/{this.state.count}
-                    </div>
-                    <br></br>
-                    <div className="ques">{questiontextcomponent}</div>
-                    </div>
-                    <div className='answer-section'>
-                    {questionoptioncomponent}
+                        <div className='question-count'>
+                            <span>  Question {this.state.current + 1}</span>/{this.state.count}
+                        </div>
+                        <Slide in={true} key={this.state.current} timeout={1000} direction="left">
+                        <div>
+                            <br></br>
+                            <div className="ques">{questiontextcomponent}</div>
+                            <div className='answer-section'>{questionoptioncomponent}</div>
+                        </div>
+                        </Slide>
                     </div>
                 </>
                 )}
             </div>
-            </Slide>
+
         );
     }
 }

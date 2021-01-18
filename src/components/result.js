@@ -22,7 +22,7 @@ export default class Result extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3001/api/result/search'+ this.props.location.search)
+        fetch('http://192.249.18.54:3001/api/result/search'+ this.props.location.search)
             .then(res=>res.json())
             .then(res => {
                 console.log(JSON.stringify(res));
@@ -33,22 +33,18 @@ export default class Result extends React.Component {
     render() {
         return (
             <div className='app'>
-                <Fade in={true} timeout={1000}>
                 <div className="Result">
                     당신의 유형은...
                     <br></br>
                 </div>
-                </Fade>
-                <Zoom in={true} timeout={3000} >
                 <div>
-                <div><img className="image" src = {this.state.result.image}/></div>
-                <br></br>
-                <div className="resulttype">{this.state.result.result_type}</div>
-                <br></br>
-                <br></br>
-                <div className="description">{this.state.result.description}</div>
+                    <div><img className="image" src = {this.state.result.image}/></div>
+                    <br></br>
+                    <div className="resulttype">{this.state.result.result_type}</div>
+                    <br></br>
+                    <br></br>
+                    <div className="description">{this.state.result.description}</div>
                 </div>
-                </Zoom>
             </div>
         );
     }
