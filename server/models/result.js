@@ -15,7 +15,11 @@ var resultSchema = new Schema({
     tf_point: {type: Number, required: true},
     pj_point: {type: Number, required: true},
     description: String,
-    image: String
+    image: String,
+    goodtype : String,
+    goodtype_image : String,
+    badtype : String,
+    badtype_image : String
 });
 
 module.exports = mongoose.model('result', resultSchema);

@@ -80,6 +80,10 @@ router.put('/id/:id', function(req, res) {
         if (req.body.result_type) result.result_type = req.body.result_type
         if (req.body.description) result.description = req.body.description
         if (req.body.image) result.image = req.body.image
+        if (req.body.goodtype) result.goodtype = req.body.goodtype
+        if (req.body.goodtype_image) result.goodtype_image = req.body.goodtype_image
+        if (req.body.badtype) result.badtype = req.body.badtype
+        if (req.body.badtype_image) result.badtype_image = req.body.badtype_image
         result.save(function(err) {
             if(err){
                 console.error(err);

@@ -41,6 +41,9 @@ export default class Result extends React.Component {
                 <br></br>
                 <br></br>
                 <div className="description">{this.state.result.description}</div>
+                <hr className="typehr"></hr>
+                <img className="goodimage" src={this.state.result.goodtype_image} /><div className="type">찰떡궁합 유형<br></br>{this.state.result.goodtype}</div>
+                <img className="badimage" src={this.state.result.badtype_image} /><div className="type">최악궁합 유형<br></br>{this.state.result.badtype}</div>
             </div>
         );
     }
