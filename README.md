@@ -2,14 +2,14 @@
 ### 기간: 2021.01.13~2021.01.20
 ### 사용한 프로그래밍 언어: React.js, Node.js, MongoDB
 
-- React.js, Node.js, MongoDB 기반 '나에게 어울리는 칵테일을 찾아주는 테스트' 반응형 웹 서비스 개발
-- MongoDB를 이용한 DB api 구축
-- Material UI, BootStrap을 이용한 UI/UX 구현
-- DB 툴 Insomnia를 이용한 데이터 관리
-- [기획 및 DB 리스트](https://docs.google.com/document/d/1GZ5IgBRviaq9v3KBGbgLXGbdihKMEHGrJoU2cOYXlSw/edit)
+- [X] React.js, Node.js, MongoDB 기반 '나에게 어울리는 칵테일을 찾아주는 테스트' 반응형 웹 서비스 개발
+- [X] MongoDB를 이용한 DB api 구축
+- [X] Material UI, BootStrap을 이용한 UI/UX 구현
+- [X] DB 툴 Insomnia를 이용한 데이터 관리
+- [X] [기획 및 DB 리스트](https://docs.google.com/document/d/1GZ5IgBRviaq9v3KBGbgLXGbdihKMEHGrJoU2cOYXlSw/edit)
 <br>
 
-- 구현 페이지
+- [X] 구현 페이지
 ### PC 버전
 
 1. 메인 페이지
